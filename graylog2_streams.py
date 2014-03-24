@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/env python
 import sys
 import yaml
 import pprint 
@@ -269,13 +269,13 @@ def main():
 
 	else:
 		logging.debug("Steams in CLI")
-		parser = argparse.ArgumentParser(description='Needs a stream name. at least')
+		parser = argparse.ArgumentParser(description='Needs a save or load or -i')
 		parser.add_argument('-d', action="store_true", default=False, help='debug a bit')
 		parser.add_argument('-s', help='save Title/All streams as json dump to filename"')
 		parser.add_argument('-l', help='load streams from "filename" made from -s')
 		parser.add_argument('-f', help='create facility stream "name"')
 		parser.add_argument('-g', help='the graylog2 host for the api')
-		parser.add_argument('-t', help='get only this list of screen titles')
+		parser.add_argument('-t', help='get only this list of stream titles')
 		parser.add_argument('-i', action="store_true", help='display all streams')
 		args = parser.parse_args()
 
