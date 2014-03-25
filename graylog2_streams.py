@@ -14,7 +14,7 @@ import requests
 def insert_alert_recipient(receiver_url,receiver,r_type):
 	new_recipient = { 'entity': receiver, 'type': r_type }
 	headers = {'Content-type': 'application/json'}
-	response = requests.post(receiver_url)
+	response = requests.post(receiver_url, data=json.dumps(new_recipient), headers=headers)
 	status = False
 	if response.status_code is requests.codes.created:
 		status = True
