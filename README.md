@@ -8,7 +8,7 @@ graylog2_streams.py: save, load, inspect streams
 on the graylog host:
 	./graylog2_streams.py -s mystreams.json
 	cat mystreams.json | python -mjson.tool
-
+<pre>
 {
     "streams": [
         {
@@ -44,9 +44,10 @@ on the graylog host:
     ],
     "total": 1
 }
-
+</pre>
 ------------
-Or, as a web request:
+Or, as web requests:
 
 curl -s http://example.com/cgi-bin/graylog2_streams.py?save=true -o /tmp/saved.json 
+
 curl -s -X POST -H "Content-Type: application/json" -d @/tmp/saved.json http://example.com/cgi-bin/graylog2_streams.py
